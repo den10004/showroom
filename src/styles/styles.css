@@ -10,16 +10,15 @@
 
 
 :root {
-  --primary-black: rgba(34, 34, 34, 1);
-  --primary-gray: rgba(51, 51, 51, 1);
+  --primary-black: rgba(35, 35, 35, 1);
   --primary-blue: rgba(48, 139, 253, 1);
   --hover-blue: rgba(35, 118, 221, 1);
   --disabled: rgba(213, 213, 213, 1);
-  --primary-gray189: rgba(189, 189, 189, 1);
   --white: rgba(255, 255, 255, 1);
-  --white-01: rgba(255, 255, 255, 0.1);
-  --primary-gray-light: rgba(249, 249, 249, 1);
-  --primary-green: rgba(58, 194, 112, 1)
+  /*
+  --white-01: rgba(255, 255, 255, 0.1);*/
+  --primary-gray-light: rgba(249, 249, 249);
+  /*--primary-green: rgba(58, 194, 112, 1)*/
 }
 
 html {
@@ -32,6 +31,7 @@ body {
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  font-family: "Inter";
 }
 
 * {
@@ -43,15 +43,16 @@ a {
   text-decoration: none;
 }
 
+
+li {
+  list-style: none
+}
+
 .wrapper {
   display: flex;
   margin: 0 auto;
   max-width: 1312px;
   padding: 0 15px;
-}
-
-.sectionMargin {
-  margin-top: 112px;
 }
 
 button {
@@ -60,24 +61,19 @@ button {
   box-sizing: border-box;
 }
 
+
 .button {
-  font-family: "Onest";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
-  line-height: 120%;
   color: var(--white);
   border-radius: 40px;
-  padding: 30px;
-
-}
-
-.btn-white {
-  background-color: var(--white);
+  padding: 18px 24px;
 }
 
 .btn-blue {
-  background-color: var(--primary-blue);
+  background-color: var(--primary-blue)
 }
+
 
 .btn-blue:hover {
   background-color: var(--hover-blue);
@@ -88,23 +84,11 @@ button {
 }
 
 
-.btn-orange {
-  background: linear-gradient(90deg, #FFE259 0%, #FFA751 100%);
-}
-
-.btn-orange:hover {
-  background: linear-gradient(90deg, #FCD000 0%, #FF8E1F 100%);
-
-}
-
-.btn-orange:disabled {
-  background-color: var(--disabled);
-}
 
 .label {
   border-radius: 40px;
   padding: 16px 32px;
-  font-family: "Onest";
+  font-family: "Inter";
   font-weight: 400;
   font-size: 32px;
   display: flex;
@@ -132,51 +116,37 @@ button {
 }
 
 
-
-.select-btn {
-  border-radius: 41px;
-  background-color: var(--primary-gray);
-  font-family: "Onest";
-  font-weight: 500;
+.p24 {
   font-size: 24px;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  padding: 17px 24px;
+  font-weight: 400;
 }
 
+/*
 .section-wrap {
   width: 100%;
   border-radius: 40px;
   padding: 40px;
-  font-family: "Onest";
+  font-family: "Inter";
   color: var(--white);
   text-align: left;
   position: relative;
   background-color: var(--primary-black)
 }
-
+*/
 .logo {
   font-size: 48px;
   font-weight: 700;
   line-height: 58px;
-  font-family: "Onest";
+  font-family: "Inter";
 }
 
-.specification-link {
-  padding: 28px 32px;
-  border-radius: 40px;
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  font-family: "Onest";
-}
 
-.specification-link>a {
-  font-size: 24px;
-  font-weight: 400;
-}
 
+@media (max-width: 1024px) {
+  .p24 {
+    font-size: 22px;
+  }
+}
 
 @media (max-width: 768px) {
   .label {
@@ -188,33 +158,27 @@ button {
     display: none;
   }
 
+  .p24 {
+    font-size: 20px;
+  }
+
+  /*
   .section-wrap {
     padding: 32px 24px;
   }
-
-  .specification-link {
-    padding: 21px 52px;
-    border-radius: 40px;
-  }
-
-  .specification-link>a {
-    font-size: 14px;
-    display: flex;
-    margin: 0 auto;
-  }
+*/
 }
 
 @media (max-width: 550px) {
-  .select-btn {
-    border-radius: 41px;
-    font-size: 14px;
-    padding: 15px 26px;
+  .p24 {
+    font-size: 16px;
   }
 
+  /*
   .section-wrap {
     border-radius: 22px;
   }
-
+*/
   .sectionMargin {
     margin-top: 64px;
   }
@@ -222,22 +186,24 @@ button {
   .logo {
     font-size: 26px;
   }
+
+  .button {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 425px) {
-  .button {
+  .p24 {
     font-size: 14px;
-    padding: 22px 32px;
   }
 
   .label {
     padding: 14px 10px;
     font-size: 14px;
   }
-}
 
-@media (max-width: 425px) {
-  .specification-link {
-    padding: 21px 31px;
+  .button {
+    font-size: 16px;
+    padding: 16px 24px;
   }
 }
