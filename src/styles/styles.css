@@ -121,6 +121,15 @@ button {
   font-weight: 400;
 }
 
+
+.section-top {
+  margin-top: 112px;
+}
+
+.container-top {
+  margin-top: 64px;
+}
+
 /*
 .section-wrap {
   width: 100%;
@@ -161,12 +170,6 @@ button {
   .p24 {
     font-size: 20px;
   }
-
-  /*
-  .section-wrap {
-    padding: 32px 24px;
-  }
-*/
 }
 
 @media (max-width: 550px) {
@@ -174,14 +177,6 @@ button {
     font-size: 16px;
   }
 
-  /*
-  .section-wrap {
-    border-radius: 22px;
-  }
-*/
-  .sectionMargin {
-    margin-top: 64px;
-  }
 
   .logo {
     font-size: 26px;

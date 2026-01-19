@@ -2,6 +2,8 @@ footer {
     border-radius: 56px 56px 0px 0px;
     background: var(--primary-black);
     padding: 40px 60px;
+    max-width: 1440px;
+    margin: 10px auto 0 auto;
 }
 
 .footer {
