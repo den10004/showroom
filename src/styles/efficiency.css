@@ -1,0 +1,247 @@
+.efficiency {
+    background-color: var(--primary-black);
+    padding: 70px 0 50px 0;
+    border-radius: 60px;
+}
+
+.efficiency__select {
+    display: flex;
+    gap: 24px;
+    margin-top: 50px;
+}
+
+
+.custom-multiselect {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-multiselect select {
+    display: none;
+}
+
+
+.select-selected {
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 20px;
+    min-width: 267px;
+    transition: background-color 0.2s;
+    width: 100%;
+    font-family: "Onest";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.select-selected.placeholder {
+    color: var(--white);
+    gap: 10px;
+}
+
+
+.select-selected::after {
+    content: "";
+    width: 22px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='12' viewBox='0 0 22 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.390524 0.390523C0.911223 -0.130177 1.75544 -0.130177 2.27614 0.390523L10.6667 8.78105L19.0572 0.390522C19.5779 -0.130177 20.4221 -0.130177 20.9428 0.390522C21.4635 0.911221 21.4635 1.75544 20.9428 2.27614L11.6095 11.6095C11.0888 12.1302 10.2446 12.1302 9.72386 11.6095L0.390524 2.27614C-0.130175 1.75544 -0.130175 0.911222 0.390524 0.390523Z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.select-open .select-selected::after {
+    transform: rotate(180deg);
+}
+
+
+.select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    border-radius: 6px;
+    margin-top: 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 99;
+}
+
+.select-open .select-items {
+    display: block;
+}
+
+
+.select-items div {
+    color: white;
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.select-items div:hover {
+    background-color: #444;
+}
+
+
+.select-items div::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    border: 2px solid #666;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+
+.select-items div::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.5L4.5 8L11 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    position: absolute;
+    right: 34px;
+}
+
+
+.select-items div.selected::before {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.select-items div.selected::after {
+    opacity: 1;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    width: 100%;
+    margin-top: 48px;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 32px;
+    box-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.05);
+    background: var(--primary-gray);
+
+}
+
+.game-card>img {
+    width: 100%;
+    height: auto;
+}
+
+.game-content {
+    font-family: "Onest";
+    color: var(--white);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1;
+}
+
+.game-content>h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 14px 0;
+}
+
+.game-content>div {
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 24px;
+    background: rgba(161, 203, 255, 0.2);
+    width: 100%;
+    padding: 8px 14px;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+
+@media (max-width: 1200px) {
+    .game-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .game-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 767px) {
+    .efficiency__select {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 24px;
+    }
+
+    .select-selected {
+        min-width: 150px;
+    }
+
+    .efficiency {
+        border-radius: 35px;
+        padding: 30px 0 23px 0;
+
+    }
+
+    .game-container {
+        gap: 16px;
+        margin-top: 17px;
+    }
+
+    .select-selected {
+        font-size: 14px;
+    }
+
+    .select-selected::after {
+        width: 11px;
+    }
+
+    .game-content {
+        padding: 12px;
+
+    }
+
+    .game-content>h3 {
+        font-size: 15px;
+        margin-top: 0px;
+    }
+
+    .game-content>div {
+        font-size: 14px;
+    }
+}
+
+
+
+
+@media (max-width: 360px) {
+    .game-container {
+        grid-template-columns: 1fr;
+    }
+}
