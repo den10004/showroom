@@ -18,6 +18,8 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 48px 64px 48px 48px;
+    width: 57%;
+    box-sizing: border-box;
 }
 
 .uniq__first>img {
@@ -30,10 +32,153 @@
     font-size: 64px;
     font-weight: 600;
     line-height: 110%;
+    z-index: 1;
 }
 
 .uniq__first>p {
     font-size: 32px;
     font-weight: 400;
     line-height: 130%;
+    opacity: 0.8;
+    z-index: 1;
+    margin-bottom: 75px;
+}
+
+.uniq__list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 30px 0 0;
+}
+
+.uniq__list>div {
+    padding: 16px 24px 16px 24px;
+    box-sizing: border-box;
+    border: 1px solid var(--white);
+    border-radius: 30px;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.uniq__last {
+    width: 40%;
+}
+
+.uniq__last>img {
+    width: 100%;
+}
+
+.sound-tablet {
+    display: none;
+}
+
+@media (max-width: 1320px) {
+    .uniq__list {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1280px) {
+    .uniq__first {
+        padding: 48px;
+    }
+
+    .uniq__first>h4 {
+        font-size: 58px;
+    }
+
+    .uniq__list>div {
+        padding: 10px;
+        border-radius: 30px;
+        font-size: 20px !important;
+    }
+
+    .uniq__first>p {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 1125px) {
+    .uniq__first>h4 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .uniq__container>div {
+        border-radius: 52px;
+    }
+
+    .uniq__list>div {
+        padding: 6px 6px 6px 6px;
+        border-radius: 30px;
+        font-size: 16px !important;
+    }
+
+    .uniq__first {
+        padding: 24px;
+    }
+
+    .uniq__first>h4 {
+        font-size: 36px;
+    }
+
+    .uniq__first>p {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .uniq__container {
+        justify-content: start;
+        flex-direction: column;
+    }
+
+    .uniq__container>div {
+        border-radius: 32px;
+        gap: 12px;
+    }
+
+    .uniq__first {
+        width: 100%;
+    }
+
+    .uniq__last {
+        width: 100%;
+    }
+
+    .uniq__first>img {
+        width: 100px;
+    }
+
+    .uniq__list {
+        margin-top: 20px;
+    }
+
+    .uniq__list>div {
+        padding: 12px 16px;
+    }
+
+    .sound-tablet {
+        display: inline-block;
+        border-radius: 32px;
+    }
+
+    .sound-default {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .uniq__first>h4 {
+        font-size: 32px;
+    }
+
+    .uniq__first>p {
+        font-size: 14px;
+    }
+
+    .uniq__list {
+        margin-top: 15px;
+    }
 }

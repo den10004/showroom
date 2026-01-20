@@ -98,6 +98,10 @@ button {
   margin: 0 auto;
 }
 
+.label>span>br {
+  display: none;
+}
+
 .label-color-black {
   background: var(--primary-gray);
   color: var(--white);
@@ -123,7 +127,7 @@ button {
 
 
 .section-top {
-  margin-top: 112px;
+  margin-top: 118px;
 }
 
 .container-top {
@@ -170,6 +174,14 @@ button {
   .p24 {
     font-size: 20px;
   }
+
+  .section-top {
+    margin-top: 67px;
+  }
+
+  .container-top {
+    margin-top: 25px;
+  }
 }
 
 @media (max-width: 550px) {
@@ -193,7 +205,7 @@ button {
   }
 
   .label {
-    padding: 14px 10px;
+    padding: 8px 16px;
     font-size: 14px;
   }
 
@@ -201,4 +213,14 @@ button {
     font-size: 16px;
     padding: 16px 24px;
   }
+
+  .label-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .label>span>br {
+    display: block;
+  }
+
 }
