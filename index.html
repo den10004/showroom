@@ -614,13 +614,15 @@
               </li>
             </ul>
 
-            <form>
-              <input /> <input />
+            <form class="address__form">
+              <input type="text" min="3" placeholder="Имя" />
+              <input type="tel" placeholder="Телефон" />
 
-              <button>Записаться на тест-драйв</button>
+              <button class="button btn-blue">Записаться на тест-драйв</button>
             </form>
           </div>
-          <div class="address__card"></div>
+
+          <div class="address__card map" id="map"></div>
         </div>
       </div>
     </section>
@@ -629,8 +631,31 @@
       <div class="wrapper footer"></div>
     </footer>
   </body>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=s&lang=ru_RU"></script>
+  <script>
+    function init() {
+      let map = new ymaps.Map("map", {
+        center: [55.027423, 82.96716],
+        zoom: 17,
+      });
 
-  <script src="./src/js/swiper-bundle.min.js"></script>
+      var placemark = new ymaps.Placemark(
+        [55.027423, 82.96716],
+        {
+          balloonContent: "ул Гаранина 15 к3",
+        },
+        {
+          preset: "islands#redStretchyIcon", // Другая метка
+          iconColor: "#ff0000", // Ярко-красный цвет
+        },
+      );
+
+      map.geoObjects.add(placemark);
+      placemark.balloon.open();
+    }
+
+    ymaps.ready(init);
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -654,25 +679,6 @@
         burger.classList.toggle("active");
         mobileMenu.classList.toggle("active");
       });
-    });
-
-    var swiper3 = new Swiper(".feedbackSlider", {
-      slidesPerView: 1.5,
-      spaceBetween: 30,
-      watchOverflow: true,
-      navigation: {
-        nextEl: ".feedbackSlider-button-next",
-        prevEl: ".feedbackSlider-button-prev",
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        },
-        900: {
-          slidesPerView: 1.5,
-        },
-      },
     });
   </script>
 </html>

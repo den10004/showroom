@@ -20,6 +20,7 @@
   --disabled: rgba(213, 213, 213, 1);
   --white: rgba(255, 255, 255, 1);
   --primary-gray-light: rgba(249, 249, 249);
+  --primary-gray-placeholder: rgba(186, 186, 186, 1);
 }
 
 html {
@@ -83,8 +84,6 @@ button {
 .btn-blue:disabled {
   background-color: var(--disabled);
 }
-
-
 
 .label {
   border-radius: 40px;
@@ -152,11 +151,72 @@ button {
   z-index: 1;
 }
 
+input {
+  height: 80px;
+  border-radius: 16px;
+  border: none;
+  padding-left: 10px;
+}
+
+::placeholder {
+  color: var(--primary-gray-placeholder);
+  opacity: 1;
+  font-size: 24px;
+}
+
+
+::-webkit-input-placeholder {
+  color: var(--primary-gray-placeholder);
+  font-size: 24px;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: var(--primary-gray-placeholder);
+  font-size: 24px;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: var(--primary-gray-placeholder);
+  font-size: 24px;
+}
+
+:-moz-placeholder {
+  color: var(--primary-gray-placeholder);
+  font-size: 24px;
+  opacity: 1;
+}
+
 @media (max-width: 1280px) {
   .link-desc {
     padding: 10px;
     border-radius: 30px;
     font-size: 20px !important;
+  }
+
+  input {
+    height: 70px;
+  }
+
+  ::placeholder {
+    font-size: 20px;
+  }
+
+  ::-webkit-input-placeholder {
+    font-size: 20px;
+  }
+
+  ::-moz-placeholder {
+    font-size: 20px;
+  }
+
+  :-ms-input-placeholder {
+    font-size: 20px;
+  }
+
+  :-moz-placeholder {
+    font-size: 20px;
   }
 }
 
@@ -201,6 +261,9 @@ button {
     width: fit-content;
     min-width: min-content;
   }
+
+
+
 }
 
 @media (max-width: 550px) {
