@@ -4,6 +4,8 @@
 @import "./give.css";
 @import "./diving.css";
 @import "./pc.css";
+@import "./gallery.css";
+@import "./address.css";
 @import "./footer.css";
 @import "./swiper-bundle.min.css";
 @import "./normalize.css";
@@ -16,10 +18,7 @@
   --hover-blue: rgba(35, 118, 221, 1);
   --disabled: rgba(213, 213, 213, 1);
   --white: rgba(255, 255, 255, 1);
-  /*
-  --white-01: rgba(255, 255, 255, 0.1);*/
   --primary-gray-light: rgba(249, 249, 249);
-  /*--primary-green: rgba(58, 194, 112, 1)*/
 }
 
 html {
@@ -135,18 +134,7 @@ button {
   margin-top: 64px;
 }
 
-/*
-.section-wrap {
-  width: 100%;
-  border-radius: 40px;
-  padding: 40px;
-  font-family: "Inter";
-  color: var(--white);
-  text-align: left;
-  position: relative;
-  background-color: var(--primary-black)
-}
-*/
+
 .logo {
   font-size: 48px;
   font-weight: 700;
@@ -175,9 +163,7 @@ button {
   .p24 {
     font-size: 22px;
   }
-}
 
-@media (max-width: 1024px) {
   .link-desc {
     padding: 6px 6px 6px 6px;
     border-radius: 30px;
@@ -210,6 +196,9 @@ button {
 
   .link-desc {
     padding: 12px 11px;
+    width: max-content;
+    width: fit-content;
+    min-width: min-content;
   }
 }
 
@@ -252,4 +241,7 @@ button {
     display: block;
   }
 
+  .pc__list-font>.link-desc {
+    font-size: 14px !important;
+  }
 }
