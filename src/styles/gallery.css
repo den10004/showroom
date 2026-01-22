@@ -14,13 +14,43 @@
 
 .big-slider>img,
 .big-slider>video {
-    /* Добавляем video */
     border-radius: 64px;
 }
 
+.big-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mySwiper2 .big-slider img,
+.mySwiper2 .big-slider video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Специально для миниатюр */
+.mySwiper .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.mySwiper .swiper-slide img,
+.mySwiper .swiper-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.wrap-slider {
+    height: 600px;
+}
+
+
 .swiper-slide img,
 .swiper-slide video {
-    /* Добавляем video */
     display: block;
     width: 100%;
     height: 100%;
@@ -110,7 +140,6 @@
 
     .big-slider>img,
     .big-slider>video {
-        /* Добавляем video */
         border-radius: 32px;
     }
 
@@ -126,6 +155,10 @@
 
     .swiper-button-prev {
         top: 55% !important;
+    }
+
+    .wrap-slider {
+        height: 400px;
     }
 }
 
@@ -143,5 +176,9 @@
 
     .swiper-button-prev {
         top: 60% !important;
+    }
+
+    .wrap-slider {
+        height: 300px;
     }
 }
