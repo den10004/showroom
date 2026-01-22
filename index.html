@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles/styles.css" />
+
     <title>VAC шоурум</title>
   </head>
 
@@ -495,37 +496,32 @@
           <span>Галерея шоурума</span>
         </div>
       </div>
-
-      <div class="wrapper">
-        <div class="gallery container-top">
-          <div class="gallery__video">
-            <img src="./src/images/02.webp" alt="компьютер" />
-            <svg
-              width="100"
-              height="100"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="100" height="100" rx="50" fill="white" />
-              <path
-                d="M70 46.5359C72.6667 48.0755 72.6667 51.9245 70 53.4641L37 72.5167C34.3333 74.0563 31 72.1318 31 69.0526L31 30.9474C31 27.8682 34.3333 25.9437 37 27.4833L70 46.5359Z"
-                fill="#D9D9D9"
-              />
-            </svg>
+      <div class="wrapper wrap-slider container-top">
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide big-slider">
+              <img src="./src/images/pc2-min.webp" />
+            </div>
+            <div class="swiper-slide big-slider">
+              <img src="./src/images/pc2-min.webp" />
+            </div>
+            <div class="swiper-slide big-slider">
+              <img src="./src/images/pc-min.webp" />
+            </div>
           </div>
-          <div class="gallery__gallery">
-            <div>
-              <img src="./src/images/01.webp" alt="компьютер" />
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./src/images/pc2-min.webp" />
             </div>
-            <div>
-              <img src="./src/images/02.webp" alt="компьютер" />
+            <div class="swiper-slide">
+              <img src="./src/images/pc2-min.webp" />
             </div>
-            <div>
-              <img src="./src/images/01.webp" alt="компьютер" />
-            </div>
-            <div>
-              <img src="./src/images/02.webp" alt="компьютер" />
+            <div class="swiper-slide">
+              <img src="./src/images/pc-min.webp" />
             </div>
           </div>
         </div>
@@ -627,11 +623,28 @@
       </div>
     </section>
 
+    <section class="section-top">
+      <div class="wrapper">
+        <div class="label label-color-white">
+          <div class="label-dot"></div>
+          <span>Используемые технологии и оборудование</span>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="address container-top"></div>
+      </div>
+    </section>
+
     <footer class="sectionMargin">
       <div class="wrapper footer"></div>
     </footer>
   </body>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=s&lang=ru_RU"></script>
+  <script src="./src/js/swiper-bundle.min.js"></script>
+  <script src="./src/js/slider.js"></script>
+
+  <script></script>
+
   <script>
     function init() {
       let map = new ymaps.Map("map", {
