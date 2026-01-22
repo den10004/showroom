@@ -1,1 +1,52 @@
-.technology {}
+.technology {
+    display: flex;
+    gap: 32px;
+    padding: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 20px;
+    scrollbar-width: none;
+}
+
+.technology>div {
+    background: var(--primary-gray-light);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 224px;
+    height: 120px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+
+.technology>div:hover {
+    transform: scale(1.05);
+}
+
+.technology img {
+    width: 168px;
+    object-fit: contain;
+}
+
+
+.technology::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .technology {
+        gap: 8px;
+    }
+
+    .technology>div {
+        width: 161px;
+        height: 90px;
+    }
+
+    .technology img {
+        width: 84px;
+    }
+}
