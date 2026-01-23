@@ -1,7 +1,7 @@
 footer {
     border-radius: 100px 100px 0px 0px;
     background: var(--primary-black);
-    padding: 50px 65px;
+    padding: 60px 65px;
     max-width: 1920px;
     margin: 10px auto 0 auto;
 }
@@ -34,7 +34,7 @@ footer {
     color: var(--white);
     font-weight: 400;
     font-size: 20px;
-    margin-top: 0px;
+    margin-top: 10px;
     opacity: 0.8;
 }
 

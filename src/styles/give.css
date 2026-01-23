@@ -25,7 +25,7 @@
 .give-item>div {
     border-radius: 40px;
     background-color: rgba(245, 245, 245, 1);
-    padding: 24px 51px 24px 24px;
+    padding: 24px 36px 24px 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
