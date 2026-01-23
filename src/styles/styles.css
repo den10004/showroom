@@ -116,6 +116,7 @@ button {
 
 .label-dot {
   width: 10px;
+  min-width: 10px;
   height: 10px;
   background-color: var(--primary-blue);
   border-radius: 50%;
@@ -351,6 +352,7 @@ input {
 
   .label-dot {
     width: 6px;
+    min-width: 6px;
     height: 6px;
   }
 
