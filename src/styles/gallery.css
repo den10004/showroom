@@ -78,6 +78,7 @@
     opacity: 1;
 }
 
+/* Обновленные стили для кнопок навигации */
 .swiper-button-next,
 .swiper-button-prev {
     width: 40px;
@@ -94,6 +95,31 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    opacity: 0;
+    /* Скрываем по умолчанию */
+    visibility: hidden;
+    /* Скрываем по умолчанию */
+}
+
+/* Показываем кнопки при наведении на основной слайдер */
+.mySwiper2:hover .swiper-button-next,
+.mySwiper2:hover .swiper-button-prev {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Показываем кнопки при наведении на слайдер с миниатюрами */
+.mySwiper:hover~.mySwiper2 .swiper-button-next,
+.mySwiper:hover~.mySwiper2 .swiper-button-prev {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Показываем кнопки при наведении на сам слайд */
+.mySwiper2 .big-slider:hover~.swiper-button-next,
+.mySwiper2 .big-slider:hover~.swiper-button-prev {
+    opacity: 1;
+    visibility: visible;
 }
 
 .swiper-button-next:after,
@@ -134,6 +160,16 @@
 .swiper-button-prev {
     left: 0px !important;
     top: 50% !important;
+}
+
+/* Для мобильных устройств оставляем кнопки всегда видимыми */
+@media (max-width: 768px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
 }
 
 @media (max-width: 768px) {
