@@ -7,6 +7,7 @@
 @import "./gallery.css";
 @import "./address.css";
 @import "./technology.css";
+@import "./modal.css";
 @import "./footer.css";
 @import "./swiper-bundle.min.css";
 @import "./normalize.css";
@@ -146,7 +147,7 @@ button {
 }
 
 .link-desc {
-  padding: 16px 24px 16px 24px;
+  padding: 16px 20px 16px 20px;
   box-sizing: border-box;
   border: 1px solid var(--white);
   border-radius: 30px;

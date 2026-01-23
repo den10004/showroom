@@ -1,4 +1,5 @@
 const phoneInputs = document.querySelectorAll("input[name=tel]");
+
 const phoneInputHandler = function (input) {
   let x = input.value
     .replace(/\D/g, "")
@@ -12,6 +13,22 @@ const phoneInputHandler = function (input) {
   const group5 = x[5] ? "-" + x[5] : x[5];
   input.value = group1 + group2 + group3 + group4 + group5;
 };
+
+function isPhoneComplete(phoneValue) {
+  const cleaned = phoneValue.replace(/\D/g, "");
+  return cleaned.length === 11;
+}
+
 phoneInputs.forEach((input, idx) => {
-  input.addEventListener("input", (e) => phoneInputHandler(e.target));
+  input.addEventListener("input", (e) => {
+    phoneInputHandler(e.target);
+
+    if (isPhoneComplete(e.target.value)) {
+      e.target.classList.add("complete");
+      e.target.classList.remove("incomplete");
+    } else {
+      e.target.classList.add("incomplete");
+      e.target.classList.remove("complete");
+    }
+  });
 });

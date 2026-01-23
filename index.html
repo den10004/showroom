@@ -261,7 +261,10 @@
           звуком 5.2.4 Dolby Atmos, c двумя 15-дюймовыми сабвуферами
         </p>
 
-        <button class="button btn-blue hero-btn">
+        <button
+          class="button btn-blue hero-btn open-modal"
+          data-service="Запись"
+        >
           Записаться в шоурум
           <div>
             <svg
@@ -395,7 +398,7 @@
           </h2>
           <div class="diving__list p24">
             <div class="link-desc">Отличная читаемость в играх и кино</div>
-            <div class="link-desc">Демонстрация связки ПК+ТВ+звук 5.2</div>
+            <div class="link-desc">Демонстрация связки ПК+ТВ+звук 5.2.4</div>
             <div class="link-desc">Mini LED TB 75дюймов</div>
             <div class="link-desc">Высокая яркость и контраст</div>
           </div>
@@ -724,7 +727,9 @@
                 <a href="tel:+79991234567">+7 (999) 123-45-67</a>
               </div>
             </li>
-            <button class="btn-blue button">Записаться в шоурум</button>
+            <button class="btn-blue button open-modal" data-service="Запись">
+              Записаться в шоурум
+            </button>
           </ul>
         </div>
 
@@ -741,11 +746,42 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Записаться в шоурум</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form class="address__form" id="appointmentForm">
+            <input
+              type="text"
+              min="3"
+              name="name"
+              id="name"
+              placeholder="Имя"
+              required
+            />
+            <input
+              type="tel"
+              name="tel"
+              id="tel"
+              placeholder="Телефон"
+              required
+            />
+
+            <button type="submit" class="button btn-blue">Записаться</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=s&lang=ru_RU"></script>
   <script src="./src/js/swiper-bundle.min.js"></script>
   <script src="./src/js/slider.js"></script>
   <script src="./src/js/telMask.js"></script>
+  <script src="./src/js/modal.js"></script>
 
   <script></script>
 
