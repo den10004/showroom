@@ -9,8 +9,9 @@
     position: relative;
 }
 
-.header__container>.logo {
+.header__container>.logo>a {
     line-height: 82%;
+    color: var(--primary-black);
 }
 
 .header-burger {
@@ -98,7 +99,7 @@
         gap: 20px;
     }
 
-    .logo {
+    .logo>a {
         font-size: 38px;
     }
 }

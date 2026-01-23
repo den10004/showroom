@@ -139,7 +139,7 @@ button {
 }
 
 
-.logo {
+.logo>a {
   font-size: 48px;
   font-weight: 700;
   line-height: 58px;
@@ -323,7 +323,7 @@ input {
   }
 
 
-  .logo {
+  .logo>a {
     font-size: 26px;
   }
 
