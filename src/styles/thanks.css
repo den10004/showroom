@@ -1,10 +1,21 @@
+.thanks {
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+
 .thanks__content {
     color: var(--primary-black);
     background: var(--primary-gray-light) !important;
     min-height: 534px !important;
     display: flex;
     flex-direction: column;
-    max-width: 640px;
+    max-width: 49%;
+}
+
+.thanks__map {
+    width: 49% !important;
 }
 
 .thanks__name {
@@ -36,8 +47,21 @@
 
 
 @media (max-width: 1023px) {
+    .thanks {
+        width: 100%;
+        justify-content: start;
+    }
+
     .thanks__content {
         max-width: 100%;
+    }
+
+    .thanks__content {
+        max-width: 100%;
+    }
+
+    .thanks__map {
+        width: 100% !important;
     }
 }
 
