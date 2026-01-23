@@ -9,10 +9,7 @@
     position: relative;
 }
 
-.header__container>.logo>a {
-    line-height: 82%;
-    color: var(--primary-black);
-}
+
 
 .header-burger {
     display: none;
@@ -98,13 +95,14 @@
         font-size: 16px;
         gap: 20px;
     }
-
-    .logo>a {
-        font-size: 38px;
-    }
 }
 
 @media (max-width: 767px) {
+    .header__container>.logo>a>svg {
+        width: 100px;
+    }
+
+
     .header__container>.nav-menu {
         display: none;
     }
@@ -119,4 +117,10 @@
         padding-right: 15px;
     }
 
+}
+
+@media (max-width: 425px) {
+    .header__container>.logo>a>svg {
+        width: 56px;
+    }
 }

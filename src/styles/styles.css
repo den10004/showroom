@@ -138,14 +138,6 @@ button {
   margin-top: 64px;
 }
 
-
-.logo>a {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 58px;
-  font-family: "Inter";
-}
-
 .link-desc {
   padding: 16px 20px 16px 20px;
   box-sizing: border-box;
@@ -320,11 +312,6 @@ input {
 @media (max-width: 550px) {
   .p24 {
     font-size: 16px;
-  }
-
-
-  .logo>a {
-    font-size: 26px;
   }
 
   .button {
