@@ -197,6 +197,7 @@ input {
   border-radius: 16px;
   border: none;
   padding-left: 10px;
+  font-size: 25px;
 }
 
 ::placeholder {
