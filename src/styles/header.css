@@ -59,6 +59,7 @@
 
 .mobile-menu.active {
     display: block;
+    z-index: 5;
 }
 
 .mobile-menu ul {

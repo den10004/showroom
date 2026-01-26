@@ -9,6 +9,71 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitButtons = document.querySelectorAll(".btn-blue");
   const allForms = [appointmentForm, addressForm];
 
+  function getUtmParams() {
+    const utmParams = {};
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const utmKeys = [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_campaign_name",
+      "utm_term",
+      "utm_content",
+      "utm_placement",
+      "utm_device",
+      "utm_region_name",
+      "utm_position",
+      "utm_position_type",
+      "utm_source_type",
+    ];
+
+    utmKeys.forEach((key) => {
+      const value = urlParams.get(key);
+      if (value) {
+        utmParams[key] = value;
+      }
+    });
+
+    return utmParams;
+  }
+
+  function addUtmFieldsToForm(form, formData) {
+    const utmParams = getUtmParams();
+
+    Object.assign(formData, utmParams);
+
+    if (form) {
+      Object.keys(utmParams).forEach((key) => {
+        if (!form.querySelector(`[name="${key}"]`)) {
+          const hiddenInput = document.createElement("input");
+          hiddenInput.type = "hidden";
+          hiddenInput.name = key;
+          hiddenInput.value = utmParams[key];
+          form.appendChild(hiddenInput);
+        }
+      });
+
+      if (!form.querySelector('[name="page_url"]')) {
+        const pageUrlInput = document.createElement("input");
+        pageUrlInput.type = "hidden";
+        pageUrlInput.name = "page_url";
+        pageUrlInput.value = window.location.href;
+        form.appendChild(pageUrlInput);
+      }
+
+      if (!form.querySelector('[name="referrer"]')) {
+        const referrerInput = document.createElement("input");
+        referrerInput.type = "hidden";
+        referrerInput.name = "referrer";
+        referrerInput.value = document.referrer;
+        form.appendChild(referrerInput);
+      }
+    }
+
+    return formData;
+  }
+
   function validatePhone(phoneValue) {
     const cleaned = phoneValue.replace(/\D/g, "");
     return cleaned.length === 11 && (cleaned[0] === "7" || cleaned[0] === "8");
@@ -33,18 +98,14 @@ document.addEventListener("DOMContentLoaded", function () {
       .forEach((input) => input.classList.remove("error"));
   }
 
-  // Универсальная функция обработки отправки
   function handleFormSubmit(event, formElement) {
     event.preventDefault();
 
-    // Определяем, какая форма отправляется
     const isModalForm = formElement === appointmentForm;
 
-    // Получаем данные формы
     let formData;
 
     if (isModalForm) {
-      // Модальная форма
       const nameInput = document.getElementById("name");
       const phoneInput = document.getElementById("tel");
 
@@ -54,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         phone: phoneInput.value.trim(),
       };
 
-      // Валидация для модальной формы
       let hasError = false;
       document.querySelectorAll(".error-message").forEach((el) => el.remove());
       nameInput.classList.remove("error");
@@ -69,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showError(phoneInput, "Введите номер телефона");
         hasError = true;
       } else if (!validatePhone(formData.phone)) {
-        showError(phoneInput, "Введите корректный номер телефона (11 цифр)");
+        showError(phoneInput, "Введите корректный номер телефона");
         hasError = true;
       }
 
@@ -79,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
     } else {
-      // Форма address__form
       const formInputs = formElement.querySelectorAll("input");
       formData = {
         service: "Запись на тест-драйв",
@@ -87,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
         phone: formInputs[1]?.value.trim() || "",
       };
 
-      // Валидация для формы address__form
       let hasError = false;
       formInputs.forEach((input) => {
         input.classList.remove("error");
@@ -113,54 +171,42 @@ document.addEventListener("DOMContentLoaded", function () {
       if (hasError) return;
     }
 
-    // Отправка данных
+    formData = addUtmFieldsToForm(formElement, formData);
+
     sendAppointmentData(formData, isModalForm);
   }
 
-  // Единая функция отправки данных
   function sendAppointmentData(formData, closeModalAfterSend = true) {
-    console.log("Данные для отправки:", formData);
-
-    // Здесь реализуйте отправку данных на сервер
-    /*
-    fetch('your-endpoint', {
-      method: 'POST',
+    fetch("/wp-json/my-email-api/v1/send-email", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     })
-    .then(response => {
-      if (response.ok) {
-        // После успешной отправки переходим на страницу благодарности
-        redirectToThanksPage(formData.name);
-        
-        // Закрываем модальное окно если оно было открыто
-        if (closeModalAfterSend && modalOverlay.classList.contains("active")) {
-          closeModal();
+      .then((response) => {
+        if (response.ok) {
+          redirectToThanksPage(formData.name);
+          if (
+            closeModalAfterSend &&
+            modalOverlay.classList.contains("active")
+          ) {
+            closeModal();
+          }
+          if (!closeModalAfterSend && addressForm) {
+            addressForm.reset();
+          }
         }
-        
-        // Сбрасываем форму address__form если она была отправлена
-        if (!closeModalAfterSend && addressForm) {
-          addressForm.reset();
-        }
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('Произошла ошибка при отправке. Попробуйте еще раз.');
-    });
-    */
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Произошла ошибка при отправке. Попробуйте еще раз.");
+      });
 
-    // Для демонстрации сразу перенаправляем
-    redirectToThanksPage(formData.name);
-
-    // Закрываем модальное окно если оно было открыто
     if (closeModalAfterSend && modalOverlay.classList.contains("active")) {
       closeModal();
     }
 
-    // Сбрасываем форму address__form если она была отправлена
     if (!closeModalAfterSend && addressForm) {
       addressForm.reset();
     }
@@ -185,19 +231,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function redirectToThanksPage(userName) {
     const encodedName = encodeURIComponent(userName);
-    window.location.href = `thanks.html?name=${encodedName}`;
+
+    const utmParams = getUtmParams();
+    sessionStorage.setItem("utm_params", JSON.stringify(utmParams));
+
+    window.location.href = `thanks?username=${encodedName}`;
   }
 
-  // Назначаем обработчики для всех форм
   allForms.forEach((form) => {
     if (form) {
       form.addEventListener("submit", (event) => handleFormSubmit(event, form));
     }
   });
 
-  // Назначаем обработчики для всех кнопок открытия модального окна
   submitButtons.forEach((button) => {
-    // Проверяем, является ли кнопка кнопкой открытия модального окна
     if (
       button.classList.contains("open-modal") ||
       button.parentElement.tagName !== "FORM"
@@ -206,12 +253,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Обработчики для модального окна
   if (modalClose) {
     modalClose.addEventListener("click", closeModal);
   }
 
-  // Валидация телефона при потере фокуса (для всех форм)
   document.querySelectorAll('input[type="tel"]').forEach((input) => {
     input.addEventListener("blur", function () {
       if (this.value && !validatePhone(this.value)) {

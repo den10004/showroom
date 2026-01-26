@@ -1,9 +1,8 @@
 .thanks {
     width: 100%;
+    margin-top: 60px;
     justify-content: space-between;
 }
-
-
 
 .thanks__content {
     color: var(--primary-black);
@@ -27,7 +26,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 120%;
-    margin: 32px 0 40px 0;
+    margin: 32px 0 5px 0;
 }
 
 .thanks__content>button {
@@ -37,6 +36,10 @@
 
 .thanks__list>li {
     background: rgba(232, 232, 232, 1) !important;
+}
+
+.thanks-top {
+    margin-top: 92px;
 }
 
 @media (max-width: 1280px) {
@@ -50,10 +53,8 @@
     .thanks {
         width: 100%;
         justify-content: start;
-    }
-
-    .thanks__content {
-        max-width: 100%;
+        flex-direction: column;
+        min-height: 436px !important;
     }
 
     .thanks__content {
@@ -62,12 +63,26 @@
 
     .thanks__map {
         width: 100% !important;
+        min-height: 440px !important;
     }
 }
 
 @media (max-width: 768px) {
+    .thanks {
+        margin-top: 15px;
+        gap: 10px;
+    }
+
     .thanks__name {
         font-size: 45px;
+    }
+
+    .thanks-top {
+        margin-top: 60px;
+    }
+
+    .thanks__content {
+        min-height: 438px !important;
     }
 }
 
@@ -78,7 +93,11 @@
 
     .thanks__manager {
         font-size: 16px;
-        margin: 10px 0 10px 0;
+        margin: 10px 0 -10px 0;
+    }
+
+    .thanks__map {
+        min-height: 274px !important;
     }
 }
 
