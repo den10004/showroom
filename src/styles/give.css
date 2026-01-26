@@ -56,23 +56,20 @@
 
 @media (max-width: 1024px) {
     .give-item>div>div {
-        font-size: 20px;
+        font-size: 38px;
     }
 
     .give-item>div>span {
-        font-size: 14px;
+        font-size: 15px;
+        border-radius: 32px;
     }
 
     .give-item>div {
         padding: 16px 26px 16px 16px;
     }
 
-    .give-item>div {
-        border-radius: 16px;
-    }
-
     .give-item>img {
-        border-radius: 16px;
+        border-radius: 32px;
     }
 }
 
@@ -80,15 +77,19 @@
     .give__container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
+        gap: 7px;
     }
 
     .give-item>div>div {
-        font-size: 54px;
+        font-size: 42px;
     }
 
     .give-item>div>span {
-        font-size: 24px;
+        font-size: 20px;
+        border-radius: 32px;
     }
+
+
 
     .give-item>div {
         padding: 24px 51px 24px 24px;
@@ -108,18 +109,25 @@
 }
 
 @media (max-width: 600px) {
-    .give-item>div>div {
-        font-size: 48px;
-    }
-
     .give-item>div>span {
         font-size: 16px;
     }
 
     .give-item>div {
+        font-size: 48px;
         padding: 16px 26px 16px 16px;
+        width: 52.4%;
     }
 
+    .give-item>img {
+        width: 47.6%;
+    }
+}
+
+@media (max-width: 543px) {
+    .custom-width {
+        width: 374px;
+    }
 }
 
 @media (max-width: 425px) {
@@ -129,6 +137,12 @@
 
     .give-item>div>span {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 379px) {
+    .custom-width {
+        width: 250px;
     }
 }
 

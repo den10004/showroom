@@ -163,15 +163,8 @@
 
     .pc__list {
         flex-direction: column;
+        margin-top: 30px;
     }
-
-    /*
-    .max-width-cont>.link-desc {
-        width: max-content;
-        word-wrap: break-word;
-        white-space: normal;
-    }*/
-
 }
 
 @media (max-width: 450px) {

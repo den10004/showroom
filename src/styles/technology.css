@@ -50,3 +50,16 @@
         width: 84px;
     }
 }
+
+@media (max-width: 537px) {
+    .custom-use-width {
+        width: 345px;
+    }
+}
+
+
+@media (max-width: 373px) {
+    .custom-use-width {
+        width: 246px;
+    }
+}

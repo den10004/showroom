@@ -154,6 +154,10 @@
 }
 
 @media (max-width:500px) {
+    .diving>.wrapper {
+        padding: 41px 16px;
+    }
+
     .diving>.wrapper>h2 {
         font-size: 31px;
     }
