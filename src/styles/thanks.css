@@ -63,7 +63,7 @@
 
     .thanks__map {
         width: 100% !important;
-        min-height: 440px !important;
+        height: 440px !important;
     }
 }
 
@@ -97,7 +97,7 @@
     }
 
     .thanks__map {
-        min-height: 274px !important;
+        height: 274px !important;
     }
 }
 

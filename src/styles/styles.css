@@ -322,6 +322,31 @@ input {
     gap: 10px;
   }
 
+  .modal-input {
+    height: 50px !important;
+    padding-left: 20px;
+  }
+
+  .modal-input ::placeholder {
+    font-size: 16px;
+  }
+
+  .modal-input::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+
+  .modal-input::-moz-placeholder {
+    font-size: 16px;
+  }
+
+  .modal-input:-ms-input-placeholder {
+    font-size: 16px;
+  }
+
+  .modal-input:-moz-placeholder {
+    font-size: 16px;
+  }
+
 }
 
 @media (max-width: 425px) {

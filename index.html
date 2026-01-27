@@ -674,12 +674,47 @@
       </div>
       <div class="wrapper2">
         <div class="technology container-top">
-          <div><img src="./src/images/ryzen.webp" alt="ryzen" /></div>
-          <div><img src="./src/images/intel.webp" alt="intel" /></div>
-          <div><img src="./src/images/nvidia.webp" alt="nvidia" /></div>
-          <div><img src="./src/images/amd.webp" alt="amd" /></div>
-          <div><img src="./src/images/dolby.webp" alt="dolby" /></div>
-          <div><img src="./src/images/onkyo.webp" alt="onkyo" /></div>
+          <div class="swiper technology-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./src/images/ryzen.webp" alt="ryzen" />
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/intel.webp" alt="intel" /></div>
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/nvidia.webp" alt="nvidia" /></div>
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/amd.webp" alt="amd" /></div>
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/dolby.webp" alt="dolby" /></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/images/onkyo.webp" alt="onkyo" />
+              </div>
+              <!-- Дублируем слайды для бесшовной бесконечной прокрутки -->
+              <div class="swiper-slide">
+                <img src="./src/images/ryzen.webp" alt="ryzen" />
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/intel.webp" alt="intel" /></div>
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/nvidia.webp" alt="nvidia" /></div>
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/amd.webp" alt="amd" /></div>
+              </div>
+              <div class="swiper-slide">
+                <div><img src="./src/images/dolby.webp" alt="dolby" /></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="./src/images/onkyo.webp" alt="onkyo" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -797,7 +832,7 @@
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal">
         <div class="modal-header">
-          <h3>Записаться в шоурум</h3>
+          <h3>Отправить заявку для записи в шоурум</h3>
           <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
@@ -818,7 +853,9 @@
               required
             />
 
-            <button type="submit" class="button btn-blue">Записаться</button>
+            <button type="submit" class="button btn-blue modal-btn">
+              Отправить заявку
+            </button>
           </form>
         </div>
       </div>
@@ -830,6 +867,37 @@
   <script src="./src/js/telMask.js"></script>
   <script src="./src/js/modal.js"></script>
   <script src="./src/js/map.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Swiper(".technology-slider", {
+        loop: true,
+        speed: 6000,
+        spaceBetween: 0,
+        slidesPerView: "auto",
+        centeredSlides: false,
+        allowTouchMove: false,
+        simulateTouch: false,
+        grabCursor: false,
+        autoplay: {
+          delay: 0,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 3.5,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 6,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 7,
+            spaceBetween: 32,
+          },
+        },
+      });
+    });
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
