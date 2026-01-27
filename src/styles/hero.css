@@ -172,17 +172,26 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .hero>.wrapper>h2 {
-        font-size: 60px;
+        font-size: 56px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .hero>.wrapper {
         padding: 40px 30px;
     }
+}
 
+@media (max-width: 550px) {
+    .hero>.wrapper>h2 {
+        font-size: 50px;
+    }
+}
+
+
+@media (max-width: 500px) {
     .hero>.wrapper>h2 {
         margin: 17px 0 25px 0;
         font-size: 45px;
@@ -197,7 +206,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 431px) {
     .hero>.wrapper>h2 {
         font-size: 36px;
     }
@@ -214,5 +223,21 @@
 
     .hero-btn {
         gap: 24px;
+    }
+}
+
+@media (max-width: 352px) {
+    .hero>.wrapper>h2 {
+        font-size: 33px;
+    }
+
+    .hero {
+        border-radius: 32px;
+    }
+}
+
+@media (max-width: 335px) {
+    .hero>.wrapper {
+        padding: 30px 20px;
     }
 }

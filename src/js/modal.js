@@ -219,8 +219,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorElement = document.createElement("div");
     errorElement.className = "error-message";
     errorElement.style.color = "red";
-    errorElement.style.fontSize = "12px";
-    errorElement.style.marginTop = "4px";
+    errorElement.style.fontSize = "16px";
+    errorElement.style.marginTop = "-30px";
+    errorElement.style.paddingLeft = "26px";
     errorElement.textContent = message;
 
     inputElement.parentNode.insertBefore(
