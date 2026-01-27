@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: flex-start;
     z-index: 1000;
+    padding-top: 20px;
     overflow-y: auto;
-    padding: 20px 0;
 }
 
 .modal {
@@ -24,13 +24,14 @@
     background: var(--primary-black);
     color: var(--white);
     box-sizing: border-box;
-    margin: auto;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 @keyframes modalFadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
 
     to {
