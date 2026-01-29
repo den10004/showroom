@@ -59,11 +59,16 @@
 
     .thanks__content {
         max-width: 100%;
+        min-height: auto !important;
     }
 
     .thanks__map {
         width: 100% !important;
         height: 440px !important;
+    }
+
+    .thanks__content>button {
+        margin-top: 20px;
     }
 }
 
@@ -80,10 +85,6 @@
     .thanks-top {
         margin-top: 60px;
     }
-
-    .thanks__content {
-        min-height: 438px !important;
-    }
 }
 
 @media (max-width: 500px) {
@@ -96,13 +97,27 @@
         margin: 10px 0 -10px 0;
     }
 
-    .thanks__map {
-        height: 274px !important;
+    .thanks-street {
+        font-size: 16px;
     }
 }
 
 @media (max-width: 425px) {
     .thanks__name {
         font-size: 30px;
+    }
+
+    .address__address1 {
+        padding: 24px 20px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .address__address1 {
+        padding: 24px 15px !important;
+    }
+
+    .thanks-street {
+        font-size: 14px;
     }
 }
